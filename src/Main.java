@@ -4,11 +4,15 @@ public class Main {
 
                 CardGame cardGame = new CardGame();
                 cardGame.populateDeck();
+
+
+                 cardGame.getFirstCard();
+                 cardGame.shuffleDeck();
+
+
             }
         }
 
 
 
 
-    }
-}

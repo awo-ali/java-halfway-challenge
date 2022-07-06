@@ -23,6 +23,7 @@ public class Card {
         return symbol;
     }
 
+
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }

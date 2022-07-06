@@ -1,12 +1,16 @@
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
-    public class CardGame {
+public class CardGame {
 
 
         List<Card> deckOfCards;
+
+
 
         String [] symbolArr = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
         int [] valueArr = {2,3,4,5,6,7,8,9,10,11,12,13,14};
@@ -14,7 +18,11 @@ import java.util.List;
 
         public CardGame() {
             this.deckOfCards = new ArrayList<>();
+
         }
+
+
+
 
         public void populateDeck() {
             for (int i = 0; i < suitArr.length; i++) {
@@ -23,11 +31,43 @@ import java.util.List;
                     System.out.println(newCard.toString());
                     deckOfCards.add(newCard);
 
+
                 }
 
             }
 
         }
+
+        public void getFirstCard(){
+            Card firstCard = deckOfCards.get(0);
+            deckOfCards.remove(0);
+            System.out.println("You have drawn the " + firstCard.getSymbol() + " of "+ firstCard.getSuit());
+        }
+
+
+        public void shuffleDeck(){
+            Collections.shuffle(deckOfCards);
+            System.out.println(deckOfCards);
+
+        }
+
+
+ public void sortDeckInNumberOrder(){
+            //deckOfCards.sort();
+
+    // deckOfCards = (List<Card>) deckOfCards.stream();
+     deckOfCards.stream().sorted().collect(Collectors.toList());
+
+
+ }
+
+
+
+
+
+
+
+
     }
 
 
@@ -36,6 +76,3 @@ import java.util.List;
 
 
 
-
-
-}
