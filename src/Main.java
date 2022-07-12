@@ -6,9 +6,10 @@ public class Main {
                 cardGame.populateDeck();
 
 
-                 cardGame.getFirstCard();
+//                 cardGame.getFirstCard();
                  cardGame.shuffleDeck();
-
+                 cardGame.sortDeckInNumberOrder();
+                 cardGame.sortDeckIntoSuits();
 
             }
         }

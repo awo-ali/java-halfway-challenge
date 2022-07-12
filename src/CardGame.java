@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Comparator;
+
 
 public class CardGame {
 
@@ -22,15 +24,12 @@ public class CardGame {
         }
 
 
-
-
         public void populateDeck() {
             for (int i = 0; i < suitArr.length; i++) {
                 for (int j = 0; j < symbolArr.length; j++) {
                     Card newCard = new Card(symbolArr[j], valueArr[j], suitArr[i]);
                     System.out.println(newCard.toString());
                     deckOfCards.add(newCard);
-
 
                 }
 
@@ -53,19 +52,20 @@ public class CardGame {
 
 
  public void sortDeckInNumberOrder(){
-            //deckOfCards.sort();
 
-    // deckOfCards = (List<Card>) deckOfCards.stream();
-     deckOfCards.stream().sorted().collect(Collectors.toList());
+     deckOfCards = deckOfCards.stream().sorted().collect(Collectors.toList());
+
+     System.out.println(deckOfCards);
 
 
  }
 
+ public void sortDeckIntoSuits(){
 
+            deckOfCards  = deckOfCards.stream().sorted().sorted(Comparator.comparing(Card::getSuit)).collect(Collectors.toList());
+     System.out.println(deckOfCards);
 
-
-
-
+ }
 
 
     }

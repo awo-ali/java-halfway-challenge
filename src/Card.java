@@ -1,6 +1,6 @@
 
 
-public class Card {
+public class Card implements Comparable<Card> {
 
 
     private String symbol;
@@ -43,4 +43,12 @@ public class Card {
     public void setSuit(String suit) {
         this.suit = suit;
     }
+
+    @Override
+    public int compareTo (Card card){
+        return value - card.getValue();
+
+    }
+
+
 }
